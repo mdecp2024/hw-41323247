@@ -2,6 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -94,6 +95,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -139,4 +141,67 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>SMap</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li><a href='HW 1.html'>HW 1</a><ul><li><a href='HW 1 Exam.html'>HW 1 Exam</a></li></ul><li><a href='HW 2.html'>HW 2</a><ul><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li><a href='HW 3.html'>HW 3</a><ul><li><a href='HW 3 Exam.html'>HW 3 Exam</a><ul><li><a href='w7.html'>w7</a><li><a href='w8.html'>w8</a></li></li></ul></ul><li><a href='HW 4.html'>HW 4</a><ul><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>w8</h1>
+<p>今天做了以下步驟</p>
+<ol>
+<li>下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (可攜程式環境)</li>
+<li>下載<span> </span><a href="https://mde.tw/cp2024/downloads/zmq_remote_api_ex_cube_triangle.7z">zmq_remote_api_ex_cube_triangle.7z</a> (利用 Python 控制模擬場景中的物件)</li>
+<li>進入可攜程式環境中 data/CoppeliaSim 目錄, 開啟 coppeliaSim.exe (機電整合模擬程式,<span> </span><a href="https://github.com/CoppeliaRobotics">原始碼</a>)</li>
+<li>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</li>
+<li>執行場景控制程式前, 先處理操作系統的防火牆, 將下列指令存為 .bat 檔案後, 以管理員身分執行, 以便開啟 23000-23050 埠號進出:</li>
+<li>netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050<br/>netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</li>
+<li>開啟 CoppeliaSim 中的視覺串流伺服器: Modules - Connectivity - Visualization stream</li>
+<li>利用 SciTE 開啟 put_cubes_into_scene_1.py, 利用 Tools - Go 執行操控程式</li>
+<li>使用者可以透過瀏覽器, 以模擬場景所在電腦的 IP, 且埠號為 23020 觀看模擬場景</li>
+<li><img alt="" height="443" src="./../images/螢幕擷取畫面 2024-10-16 121447.png" width="800"/></li>
+</ol><br />w7 << <a href='w7.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
