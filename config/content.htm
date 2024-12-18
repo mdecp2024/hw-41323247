@@ -149,7 +149,81 @@ print(f"細菌數量達到 50,000 需要的時間約為 {time_hours:.2f} 小時"
 <p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/040d70372b71ab1dc315ad0be4997024/raw/ff1c6a1486fe119b98a4ed971dabff97c4270e5a/w14_ex.py">程式連結</a>兩個圓的</p>
 <p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/040d70372b71ab1dc315ad0be4997024/raw/e87434fd610801cd291df3c0829f9e97671aef68/w14_ex2.py">程式連結2</a>變成三個圓</p><h3>w15</h3>
 <p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
-<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/9dad0d9842671bbcbccd6c989d40f761/raw/ac320b70dca8f2822bfacbfa61d9e86fada34ad8/w15.py">題目一</a></p><h1>HW 2</h1>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/9dad0d9842671bbcbccd6c989d40f761/raw/0e7eb6ecc156f605abfff371b16a8b09b07c84fb/w15.py">題目一<span>anchor</span></a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 計算從1加到100的總和
+# 使用公式計算
+n = 100  # 最大數字
+total_sum = n * (n + 1) // 2  # 高斯公式: n * (n + 1) / 2
+
+# 印出結果
+print(f"從1加到100的總和是: {total_sum}")
+</pre>
+<p><span>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</span></p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/9dad0d9842671bbcbccd6c989d40f761/raw/0e7eb6ecc156f605abfff371b16a8b09b07c84fb/w152.py">題目二addto</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+    """
+    計算從 start 到 end 的總和
+
+    參數:
+    start (int): 起始數字
+    end (int): 結束數字
+
+    回傳:
+    int: 累加總和
+    """
+    if start &gt; end:
+        return 0  # 如果起始數字比結束數字大，回傳 0
+    return sum(range(start, end + 1))
+
+# 測試函式
+result = addto(1, 100)
+print(f"從 1 累加到 100 的總和是: {result}")</pre>
+<p><span>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果. 頁面中請以 </span><span>add_only_even 作為連結標題.</span></p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/9dad0d9842671bbcbccd6c989d40f761/raw/0e7eb6ecc156f605abfff371b16a8b09b07c84fb/153.py">題目三add_only_even</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    """
+    計算從 start 到 end 之間所有偶數的總和
+
+    參數:
+    start (int): 起始數字
+    end (int): 結束數字
+
+    回傳:
+    int: 偶數的累加總和
+    """
+    # 使用 range 範圍產生器來選擇偶數
+    even_numbers = range(start + (1 if start % 2 != 0 else 0), end + 1, 2)
+    
+    # 返回偶數的總和
+    return sum(even_numbers)
+
+# 測試函式
+result = add_only_even(1, 100)
+print(f"從 1 累加到 100 的偶數總和是: {result}")
+</pre>
+<p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/9dad0d9842671bbcbccd6c989d40f761/raw/0e7eb6ecc156f605abfff371b16a8b09b07c84fb/154.py"><span>題目四add_avoid_8</span></a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    """
+    計算從 start 到 end 的累加總和，跳過包含數字 "8" 的整數
+
+    參數:
+    start (int): 起始數字
+    end (int): 結束數字
+
+    回傳:
+    int: 累加總和（避開包含 "8" 的數字）
+    """
+    # 篩選不包含數字 "8" 的整數並進行累加
+    total = sum(num for num in range(start, end + 1) if "8" not in str(num))
+    return total
+
+# 測試函式
+result = add_avoid_8(1, 100)
+print(f"從 1 累加到 100（避開數字 8）的總和是: {result}")
+</pre>
+<p><span></span></p>
+<p></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
