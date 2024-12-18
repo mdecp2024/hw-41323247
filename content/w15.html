@@ -216,6 +216,41 @@ print(f"從 1 累加到 100 的偶數總和是: {result}")
 result = add_avoid_8(1, 100)
 print(f"從 1 累加到 100（避開數字 8）的總和是: {result}")
 </pre>
+<p></p>
+<p><span>題目1: anchor</span></p>
+<p><span>設計思考:</span></p>
+<p><span>這是一個非常基本的程式，目的是快速完成範圍內整數的累加運算，並熟悉 Python 的內建函式。</span></p>
+<p><span>執行過程:</span></p>
+<p><span>1.使用 <code>range</code> 生成數字序列。</span></p>
+<p><span>2.用 <code>sum</code> 函式進行累加，既簡潔又高效。</span></p>
+<p><span>3.最後用 <code>print</code> 輸出結果，整體執行邏輯清晰明瞭。</span></p>
+<p><span>心得:這題主要幫助我熟悉 Python 的基本函式，特別是 <code>range()</code> 和 <code>sum()</code> 的用法。同時，讓我了解如何用簡潔的方式完成數字運算，並使用格式化字串輸出結果。</span></p>
+<p>題目2: addto(start, end)</p>
+<p>設計思考:</p>
+<p>目標是設計一個能夠靈活處理範圍內整數累加的函式，並考慮特殊情況（例如 start &gt; end）。</p>
+<p>使用 Python 的內建函式 <code>sum()</code> 和範圍生成器 <code>range()</code> 來簡化運算。</p>
+<p>執行過程:</p>
+<p>1.使用參數 start 和 end 指定累加範圍。</p>
+<p>2.檢查輸入範圍是否合法（避免 start &gt; end 的錯誤情況）。</p>
+<p>3.計算範圍內整數的總和並返回結果。</p>
+<p>心得:這個程式幫助我理解如何使用 range 和 sum，快速地計算數字的累加結果。</p>
+<p>題目3: add_only_even(start, end)</p>
+<p><span>設計思考:</span></p>
+<p><span>這題的核心是篩選偶數。設計範圍內累加功能時，需要先篩選條件符合的數字（偶數）。</span></p>
+<p><span>range() 函式的步長參數可以有效過濾出偶數。</span></p>
+<p><span>執行過程:</span></p>
+<p><span>1.判斷起始數字是否是偶數，若不是，從下一個偶數開始。</span></p>
+<p><span>2.計算範圍內的所有偶數總和。</span></p>
+<p><span>心得:設計這個程式時，我學到了如何篩選特定條件的數字（偶數）。這讓我對 Python 的 range 和條件判斷有更深入的理解。</span></p>
+<p><span>題目4: add_avoid_8(start, end)</span></p>
+<p><span>設計思考:</span></p>
+<p><span>本題要求跳過包含數字「8」的數字，這涉及條件篩選和字串操作。</span></p>
+<p><span>將整數轉換為字串進行判斷是實現這個功能的關鍵。</span></p>
+<p><span>執行過程:</span></p>
+<p><span>1.使用列表生成式或生成器過濾掉包含「8」的數字。</span></p>
+<p><span>2.累加篩選後的數字序列。</span></p>
+<p><span>心得:這次的重點是處理字串轉換與條件篩選的結合，讓我學到了如何判斷數字是否符合特定條件（例如不包含某些數字）。</span></p>
+<p><span></span></p>
 <p><span></span></p>
 <p></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
