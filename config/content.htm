@@ -271,7 +271,12 @@ print(f"從 1 累加到 100（避開數字 8）的總和是: {result}")
 <p></p>
 <p></p>
 <h3>w16_exam1</h3>
-<h1>HW 3</h1>
+<p>請在個人網頁標題為 "HW 2 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam1".</p>
+<p>並在 "w16_exam1" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目: 請以<span>自己的學號最後四碼</span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像 (<a href="https://www.ccplusmedia.com/wp-content/uploads/2019/10/creative-ad_landscape3.jpg">圖片來源</a>).</p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/d51dfa7ae2abd8df98691cdc40e887c7/raw/5c4112dd14c11b96973e9c74fef24b2dc0c31af4/w162.py">anchor</a></p>
+<p></p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p><h2>HW 3 Exam</h2>
@@ -293,7 +298,143 @@ print(f"從 1 累加到 100（避開數字 8）的總和是: {result}")
 <li><img alt="" height="443" src="/images/螢幕擷取畫面 2024-10-16 121447.png" width="800"/></li>
 </ol>
 <h3>w16_exam2</h3>
-<h1>HW 4</h1>
+<p>請在個人網頁標題為 "HW 3 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam2".</p>
+<p>並在 "w16_exam2" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的藍色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/d51dfa7ae2abd8df98691cdc40e887c7/raw/5c4112dd14c11b96973e9c74fef24b2dc0c31af4/163.py">迷宮圖</a></p>
+<p></p>
+<p></p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p>
+<script>
+window.onload=function(){ 
+ 
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']}); 
+ 
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+ 
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
+</script>
+</p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -304,7 +445,7 @@ print(f"從 1 累加到 100（避開數字 8）的總和是: {result}")
 <p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p><h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3><span>w16_exam3</span></h3>
+<h3>w16_exam3</h3>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>

@@ -142,7 +142,143 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w8-2 << <a href='w8-2.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>w16_exam2</h1>
-<br />w8-2 << <a href='w8-2.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
+<p>請在個人網頁標題為 "HW 3 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam2".</p>
+<p>並在 "w16_exam2" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的藍色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/d51dfa7ae2abd8df98691cdc40e887c7/raw/5c4112dd14c11b96973e9c74fef24b2dc0c31af4/163.py">迷宮圖</a></p>
+<p></p>
+<p></p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p>
+<script>
+window.onload=function(){ 
+ 
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']}); 
+ 
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+ 
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ 
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
+</script>
+</p><br />w8-2 << <a href='w8-2.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         
     <!-- footer -->
       <div class="container">
