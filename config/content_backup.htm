@@ -446,7 +446,170 @@ ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam3</h3>
-<h1>Final Report</h1>
+<p>請在個人網頁標題為 "HW 4 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam3".</p>
+<p>並在 "w16_exam3" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的黑色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 並且<span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span>.</p>
+<p>繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
+<p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/d51dfa7ae2abd8df98691cdc40e887c7/raw/db74a16adad648509db0f87268b4fd7ddfa41144/164.py">迷宮路線</a></p>
+<p></p>
+<p><!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<p><!-- 啟動 Brython --></p>
+<p>
+<script>
+from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (32, 47)", 60, 50)  # 在座標 (32, 47) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50) 
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(32, 47)  
+ctx.lineTo(232, 47)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(32, 47) 
+ctx.lineTo(32, 547)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(332, 47) 
+ctx.lineTo(532, 47)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(532, 47) 
+ctx.lineTo(532, 547)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(532, 547) 
+ctx.lineTo(332, 547)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(32, 547) 
+ctx.lineTo(232, 547)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(232, 547) 
+ctx.lineTo(232, 447)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(232, 447) 
+ctx.lineTo(332, 447)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(432, 547) 
+ctx.lineTo(432, 347)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(432, 347) 
+ctx.lineTo(132, 347)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(132, 347) 
+ctx.lineTo(132, 447)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(332, 347) 
+ctx.lineTo(332, 247)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(32, 247) 
+ctx.lineTo(232, 247)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(232, 247) 
+ctx.lineTo(232, 147)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(132, 147) 
+ctx.lineTo(432, 147)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(432, 147) 
+ctx.lineTo(432, 247)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(280, 27) 
+ctx.lineTo(515, 180)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(515, 180) 
+ctx.lineTo(414, 300)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(414, 300) 
+ctx.lineTo(332, 187)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(332, 187) 
+ctx.lineTo(72, 358)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(72, 358) 
+ctx.lineTo(72, 512)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(72, 512) 
+ctx.lineTo(365, 352)  
+ctx.stroke()
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(365, 352) 
+ctx.lineTo(310, 542)  
+ctx.stroke()
+ 
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
+ctx.stroke()
+</script>
+</p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
