@@ -452,162 +452,91 @@ ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
 <p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的黑色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 並且<span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span>.</p>
 <p>繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
 <p><a href="https://mdecp2024.github.io/hw-41323247/content/Brython.html?src=https://gist.githubusercontent.com/41323247/d51dfa7ae2abd8df98691cdc40e887c7/raw/db74a16adad648509db0f87268b4fd7ddfa41144/164.py">迷宮路線</a></p>
-<p></p>
 <p><!-- 導入 brython 程式庫 --></p>
 <p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 </p>
 <p><!-- 啟動 Brython --></p>
+<p><!-- 導入 Brython 程式庫 --></p>
 <p>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
+</p>
+<p><!-- 啟動 Brython --></p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python">
 from browser import html
 from browser import document as doc
-import math
 
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
-brython_div = doc["brython_div1"]
-brython_div <= canvas
+# 建立 canvas 元素
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小
+canvas.style = {"border": "1px solid black"}  # 加邊框以便觀察效果
+doc["brython_div1"] <= canvas
 
+# 獲取繪圖上下文
 ctx = canvas.getContext("2d")
 ctx.lineWidth = 2
-# 使用紅色字體標示起始點
-ctx.fillStyle = 'red'  # 設定文字顏色為紅色
-ctx.font = '16px Arial'  # 設定文字大小及字型
-ctx.fillText("起始點 (32, 47)", 60, 50)  # 在座標 (32, 47) 處繪製文字
-ctx.fillStyle = 'black'  
-ctx.font = '16px Arial'  
-ctx.fillText("X", 50, 15)  
-ctx.fillStyle = 'black' 
-ctx.font = '16px Arial'  
-ctx.fillText("Y", 0, 50) 
-ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+
+# 繪製起始點標籤
+ctx.fillStyle = "red"
+ctx.font = "16px Arial"
+ctx.fillText("起始點 (32, 47)", 60, 50)
+
+# 繪製坐標軸
+ctx.strokeStyle = "black"
 ctx.beginPath()
-ctx.moveTo(32, 47)  
-ctx.lineTo(232, 47)  
+ctx.moveTo(0, 50)  # Y 軸
+ctx.lineTo(50, 50)
+ctx.moveTo(50, 0)  # X 軸
+ctx.lineTo(50, 600)
 ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(32, 47) 
-ctx.lineTo(32, 547)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(332, 47) 
-ctx.lineTo(532, 47)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(532, 47) 
-ctx.lineTo(532, 547)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(532, 547) 
-ctx.lineTo(332, 547)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(32, 547) 
-ctx.lineTo(232, 547)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(232, 547) 
-ctx.lineTo(232, 447)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(232, 447) 
-ctx.lineTo(332, 447)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(432, 547) 
-ctx.lineTo(432, 347)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(432, 347) 
-ctx.lineTo(132, 347)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(132, 347) 
-ctx.lineTo(132, 447)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(332, 347) 
-ctx.lineTo(332, 247)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(32, 247) 
-ctx.lineTo(232, 247)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(232, 247) 
-ctx.lineTo(232, 147)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(132, 147) 
-ctx.lineTo(432, 147)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(432, 147) 
-ctx.lineTo(432, 247)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(280, 27) 
-ctx.lineTo(515, 180)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(515, 180) 
-ctx.lineTo(414, 300)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(414, 300) 
-ctx.lineTo(332, 187)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(332, 187) 
-ctx.lineTo(72, 358)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(72, 358) 
-ctx.lineTo(72, 512)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(72, 512) 
-ctx.lineTo(365, 352)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(365, 352) 
-ctx.lineTo(310, 542)  
-ctx.stroke()
- 
-ctx.strokeStyle = 'black'
-ctx.beginPath()
-ctx.moveTo(0, 0) 
-ctx.lineTo(50, 0)  
-ctx.stroke()
-ctx.strokeStyle = 'black'
-ctx.beginPath()
-ctx.moveTo(0, 0) 
-ctx.lineTo(0, 50)  
-ctx.stroke()
+
+# 藍色矩形邊框
+ctx.strokeStyle = "blue"
+coordinates = [
+    [(32, 47), (232, 47)],
+    [(32, 47), (32, 547)],
+    [(332, 47), (532, 47)],
+    [(532, 47), (532, 547)],
+    [(532, 547), (332, 547)],
+    [(32, 547), (232, 547)],
+    [(232, 547), (232, 447)],
+    [(232, 447), (332, 447)],
+    [(432, 547), (432, 347)],
+    [(432, 347), (132, 347)],
+    [(132, 347), (132, 447)],
+    [(332, 347), (332, 247)],
+    [(32, 247), (232, 247)],
+    [(232, 247), (232, 147)],
+    [(132, 147), (432, 147)],
+    [(432, 147), (432, 247)],
+]
+
+for start, end in coordinates:
+    ctx.beginPath()
+    ctx.moveTo(*start)
+    ctx.lineTo(*end)
+    ctx.stroke()
+
+# 紅色路徑
+ctx.strokeStyle = "red"
+red_path = [
+    [(280, 27), (515, 180)],
+    [(515, 180), (414, 300)],
+    [(414, 300), (332, 187)],
+    [(332, 187), (72, 358)],
+    [(72, 358), (72, 512)],
+    [(72, 512), (365, 352)],
+    [(365, 352), (310, 542)],
+]
+
+for start, end in red_path:
+    ctx.beginPath()
+    ctx.moveTo(*start)
+    ctx.lineTo(*end)
+    ctx.stroke()
 </script>
 </p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
